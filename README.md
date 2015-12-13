@@ -18,15 +18,16 @@ _Please note:_
   everything worked as intended. If you need a more mature solution, check
   [avidemux](http://fixounet.free.fr/avidemux/).
 * You can specify an arbitrary output container that is supported by ffmpeg.
-  However, avcut has only been tested with the Matroska (.mkv) container.
+  However, avcut has mostly been tested with the Matroska (.mkv) container.
 
 Dependencies
 ------------
 
 * [ffmpeg](https://www.ffmpeg.org/)
 
-avcut also compiles with [libav](https://libav.org/) if you enable the flag in
-the Makefile but it has not been tested much.
+Also, avcut tries to stay compatible with [libav](https://libav.org/). You can
+enable the preprocessor flag in the Makefile but this has not been tested
+thoroughly.
 
 Compilation
 -----------
