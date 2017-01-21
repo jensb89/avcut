@@ -6,7 +6,7 @@ Go to [https://sourceforge.net/projects/dsgpl/files/?source=navbar](https://sour
 
 Unpack it to \usr\local as pointed out by Synology ([here](https://developer.synology.com/developer-guide/compile_applications/download_dsm_tool_chain.html))
 
-Open a terminal a some new folder and for simplicity create two new folders here:
+Open a terminal at some new folder and for simplicity create two new folders here:
 ```shell
 mkdir src
 mkdir build
@@ -53,6 +53,9 @@ mv ../../build/include/libavutil/time.h ../../build/include/libavutil/time_.h
 
 Code to compile avcut (I did not use the makefile):
 ```shell
+cd ..
+git clone https://github.com/jensb89/avcut.git
+cd avcut
 export LDFLAGS="-L../../build/lib"
 arm-unknown-linux-gnueabi-gcc -Wall -DAVCUT_VERSION=\"0.2\" -I../../build/include/libavcodec -I../../build/include/libavdevice -I../../build/include/libavfilter -I../../build/include/libavformat -I../../build/include/libavutil -I../../build/include/libpostproc -I../../build/include/libwresample -I../../build/include/libswscale -I../../build/include -L../../build/lib  avcut.c  ../../build/lib/libavformat.a ../../build/lib/libavcodec.a ../../build/lib/libavutil.a ../../build/lib/libswresample.a ../../build/lib/libx264.a -lpthread -lm -ldl -static -o avcut
 ```
